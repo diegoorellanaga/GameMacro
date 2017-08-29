@@ -13,13 +13,13 @@ In this section, we will explain in detail the python functions involved in this
 ## Take_screenshot_and_process ##
 
 | Inputs   |      Type/explanation      |
-|----------|:-------------:|------:|
-| section | list- contains sections of the screen and their thresholds |
-| select |    int- id of the section which we want to select  |
+|----------|:-------------:|
+| section | list: contains sections of the screen and their thresholds |
+| select |    int: id of the section which we want to select  |
 
 | Outputs   |      Type/explanation      | 
-|----------|:-------------:|------:|
-| Boolean | Boolean- True if the sum of the pixel values is less than a given threshold |
+|----------|:-------------:|
+| Boolean | Boolean: True if the sum of the pixel values is less than a given threshold |
 
 
 [peg-multimarkdown] is an implementation of MultiMarkdown derived from John MacFarlane's [peg-markdown]. It makes use of a parsing expression grammar (PEG), and is written in C. It should compile for most any (major) operating system. 
