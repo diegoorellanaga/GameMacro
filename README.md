@@ -12,6 +12,10 @@ In this section, we will explain in detail the python functions involved in this
 
 ## Take_screenshot_and_process ##
 
+These functions take a screenshot of a small section of the screen ~(1x1 or 2x2 pixels).
+Then it classifies the section by the value of the sum of the pixels. 
+Depending on this value the script knows what is happening on the screen.
+
 | Inputs   |      Type/explanation      |
 |----------|:-------------:|
 | section | list: contains sections of the screen and their thresholds |
