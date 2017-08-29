@@ -20,7 +20,7 @@ Depending on this value the script knows what is happening on the screen, and re
 |----------|:-------------:|
 | section | list: contains sections of the screen and their thresholds |
 | select |    int: id of the section which we want to select  |
-| **Outputs**   |      Type/explanation      | 
+| **Outputs**   |      **Type/explanation**      | 
 | Boolean | Boolean: True if the sum of the pixel values is less than a given threshold |
 
 ## Logout ##
@@ -31,7 +31,7 @@ This function logs out the character if something wrong happens and tell the oth
 |----------|:-------------:|
 | section | list: contains sections of the screen and their thresholds |
 | q |    Queue: Queue that is used for thread communication  |
-| **Outputs**   |      Type/explanation      | 
+| **Outputs**   |      **Type/explanation**      | 
 | - | If the Take_screenshot_and_process function returns True we add an element to the Queue |
 
 ## Logout_simple ##
@@ -41,7 +41,7 @@ The difference between this function and the previous one is that this function 
 | Inputs   |      Type/explanation      |
 |----------|:-------------:|
 | q |    Queue: Queue that is used for thread communication  |
-| **Outputs**   |      Type/explanation      | 
+| **Outputs**   |      **Type/explanation**       | 
 |-| We add an element to the Queue q to tell the other thread to finish |
 
 ## Take_screenshot_and_get_status ##
@@ -52,7 +52,7 @@ Similar to Take_screenshot_and_process function but, instead of returning a bool
 |----------|:-------------:|
 | section | list: contains sections of the screen and their thresholds |
 | select |    int: id of the section which we want to select  |
-| **Outputs**   |      Type/explanation      | 
+| **Outputs**   |      **Type/explanation**      | 
 | Boolean | Boolean: True if the sum of the pixel values is less than a given threshold |
 
 ## Drag_rune_loop ## 
@@ -65,7 +65,7 @@ Given some coordinates, this functions moves a rune to the hand and execute a sp
 | rune_xy | tuple: Coordinate of the rune we want to transform |
 | food_xy | tuple: Coordinates of the food (deprecated) |
 | rune_name |  string: Name of the spell we are going to execute (deprecated) |
-| **Outputs**   |      Type/explanation      | 
+| **Outputs**   |      **Type/explanation**      | 
 | None | Takes control of the mouse and keyboard and move them to execute the actions |
 
 ## Make_runes ## 
@@ -82,7 +82,7 @@ The core of the script. This function joins several of the previous function in 
 | rune_name |  string: Name of the spell we are going to execute (deprecated) |
 | section  | list: contains sections of the screen and their thresholds |
 | q |    Queue: Queue that is used for thread communication  |
-| **Outputs**  |      Type/explanation      | 
+| **Outputs**  |      **Type/explanation**      | 
 | None | Takes control of the mouse and keyboard and move them to execute the actions |
 
 
