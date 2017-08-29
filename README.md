@@ -50,6 +50,90 @@ The difference between this function and the previous one is that this function 
 |----------|:-------------:|
 |-| We add an element to the Queue q to tell the other thread to finish |
 
+## Take_screenshot_and_get_status ##
+
+Similar to Take_screenshot_and_process function but, instead of returning a boolean we return an id number that will tell us the status of the character (attacked, hungry, safe zone, low life).
+
+| Inputs   |      Type/explanation      |
+|----------|:-------------:|
+| section | list: contains sections of the screen and their thresholds |
+| select |    int: id of the section which we want to select  |
+
+| Outputs   |      Type/explanation      | 
+|----------|:-------------:|
+| Boolean | Boolean: True if the sum of the pixel values is less than a given threshold |
+
+## Drag_rune_loop ## 
+
+Given some coordinates, this functions moves a rune to the hand and execute a spell.
+
+| Inputs   |      Type/explanation      |
+|----------|:-------------:|
+| hand_xy | tuple: Coordinates of the hand |
+| rune_xy | tuple: Coordinate of the rune we want to transform |
+| food_xy | tuple: Coordinates of the food (deprecated) |
+| rune_name |  string: Name of the spell we are going to execute (deprecated) |
+
+| Outputs   |      Type/explanation      | 
+|----------|:-------------:|
+| None | Takes control of the mouse and keyboard and move them to execute the actions |
+
+## Make_runes ## 
+
+The core of the script. This function joins several of the previous function in order to make 3 backpacks of a given rune.
+
+| Inputs   |      Type/explanation      |
+|----------|:-------------:|
+| hand_xy | tuple: Coordinates of the hand |
+| rune1_xy | tuple: Coordinate of the rune from the first backpack we want to transform |
+| rune2_xy | tuple: Coordinate of the rune from the second backpack we want to transform |
+| rune3_xy | tuple: Coordinate of the rune from the third backpack we want to transform |
+| food_xy | tuple: Coordinates of the food (deprecated) |
+| rune_name |  string: Name of the spell we are going to execute (deprecated) |
+| section | list: contains sections of the screen and their thresholds |
+| q |    Queue: Queue that is used for thread communication  |
+
+| Outputs   |      Type/explanation      | 
+|----------|:-------------:|
+| None | Takes control of the mouse and keyboard and move them to execute the actions |
+
+
+## Move_to_safety ## (direction_in,direction_out,section,q)
+
+This is one of the mods this script has. In this mod we don't log out the character if there is something dangerous present but, we make it enter to a safe zone by moving the character one step up/down, once the danger is gone and enough time has passed (to make the enemy get bored of waiting) we make the character move one step down/up.
+
+| Inputs   |      Type/explanation      |
+|----------|:-------------:|
+| direction_in | string: "up"/"down" |
+| direction_out | string: "down"/"up"|
+| section | list: contains sections of the screen and their thresholds |
+| q |    Queue: Queue that is used for thread communication  |
+
+
+The remaining functions are self-explanatory if you understood the ones described above.
+
+
+	time.sleep(19)
+	p =threading.Thread(target=Make_runes, args=(hand_xy,rune1_xy,rune2_xy,rune3_xy,food_xy,rune_name,section,q,))
+	#p=threading.Thread(target=trainmana, args=(food_xy2,q,))
+	p.start()
+	#p2=threading.Thread(target=Move_to_safety, args=(direction_in,direction_out,section,q))
+	p2=threading.Thread(target=Logout, args=(section,q,))
+	p2.start()
+
+
+In the code above we associate a function with its given values to a thread, and we start it.
+
+
+
+
+| Outputs   |      Type/explanation      | 
+|----------|:-------------:|
+| None | Takes control of the mouse and keyboard and move them to execute the actions |
+
+
+
+
 
 [peg-multimarkdown] is an implementation of MultiMarkdown derived from John MacFarlane's [peg-markdown]. It makes use of a parsing expression grammar (PEG), and is written in C. It should compile for most any (major) operating system. 
 
