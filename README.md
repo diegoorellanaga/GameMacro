@@ -1,10 +1,10 @@
-Title:	peg-multimarkdown User's Guide  
-Author:	Fletcher T. Penney  
+Title:	Medivia Macro Guide  
+Author:	Diego Orellana  
 Base Header Level:	2  
 
 # Introduction #
 
-[Markdown] is a simple markup language used to convert plain text into HTML. 
+[Medivia] is a tibia ot server. I made a simple macro to make runes while afk. And if it sees somebody in the screen it exits automatically.  
 
 [MultiMarkdown] is a derivative of Markdown that adds new syntax features, such as footnotes, tables, and metadata. Additionally, it offers mechanisms to convert plain text into LaTeX in addition to HTML. 
 
@@ -290,7 +290,7 @@ And thanks to the many contributors and users of the original MultiMarkdown that
 
 
 [peg-markdown]:	https://github.com/jgm/peg-markdown
-[Markdown]:	http://daringfireball.net/projects/markdown/
+[Markdown]:	https://medivia.online/
 [MultiMarkdown]:	http://fletcherpenney.net/multimarkdown/
 [peg-multimarkdown]:	https://github.com/fletcher/peg-multimarkdown
 [fink]:	http://www.finkproject.org/
