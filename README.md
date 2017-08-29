@@ -17,6 +17,7 @@ In this section, we will explain in detail the python functions involved in this
 | section | list: contains sections of the screen and their tresholds | $1600 |
 | select |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
+
 | Inputs   |      Type/explanation      |  Output |
 |----------|:-------------:|------:|
 | section | list: contains sections of the screen and their tresholds | $1600 |
