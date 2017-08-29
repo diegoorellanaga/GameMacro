@@ -290,7 +290,7 @@ And thanks to the many contributors and users of the original MultiMarkdown that
 
 
 [peg-markdown]:	https://github.com/jgm/peg-markdown
-[Markdown]:	https://medivia.online/
+[Medivia]:	https://medivia.online/
 [MultiMarkdown]:	http://fletcherpenney.net/multimarkdown/
 [peg-multimarkdown]:	https://github.com/fletcher/peg-multimarkdown
 [fink]:	http://www.finkproject.org/
