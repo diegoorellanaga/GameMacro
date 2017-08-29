@@ -6,12 +6,16 @@ Base Header Level:	2
 
 [Medivia] is a tibia ot server. I made a simple macro to make runes while afk. And if it sees somebody in the screen it exits automatically.  
 
-[MultiMarkdown] is a derivative of Markdown that adds new syntax features, such as footnotes, tables, and metadata. Additionally, it offers mechanisms to convert plain text into LaTeX in addition to HTML. 
+# Functions #
 
-| Tables   |      Are      |  Cool |
+In this section, we will explain in detail the python functions involved in this macro.
+
+## Take_screenshot_and_process ##
+
+| Inputs   |      Type/explanation      |  Output |
 |----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
+| section | list: contains sections of the screen and their tresholds | $1600 |
+| select |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
 
 [peg-multimarkdown] is an implementation of MultiMarkdown derived from John MacFarlane's [peg-markdown]. It makes use of a parsing expression grammar (PEG), and is written in C. It should compile for most any (major) operating system. 
