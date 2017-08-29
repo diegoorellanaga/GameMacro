@@ -12,9 +12,9 @@ In this section, we will explain in detail the python functions involved in this
 
 ## Take_screenshot_and_process ##
 
-These functions take a screenshot of a small section of the screen ~(1x1 or 2x2 pixels).
+This function takes a screenshot of a small section of the screen ~(1x1 or 2x2 pixels).
 Then it classifies the section by the value of the sum of the pixels. 
-Depending on this value the script knows what is happening on the screen.
+Depending on this value the script knows what is happening on the screen, and returns True or False depending on the situation.
 
 | Inputs   |      Type/explanation      |
 |----------|:-------------:|
@@ -24,6 +24,31 @@ Depending on this value the script knows what is happening on the screen.
 | Outputs   |      Type/explanation      | 
 |----------|:-------------:|
 | Boolean | Boolean: True if the sum of the pixel values is less than a given threshold |
+
+## Logout ##
+
+This function logs out the character if something wrong happens and tell the other thread to stop by putting something in a queue. This function depends on the values given to the previous function. 
+
+| Inputs   |      Type/explanation      |
+|----------|:-------------:|
+| section | list: contains sections of the screen and their thresholds |
+| q |    Queue: Queue that is used for thread communication  |
+
+| Outputs   |      Type/explanation      | 
+|----------|:-------------:|
+| - | If the Take_screenshot_and_process function returns True we add an element to the Queue |
+
+## Logout_simple ##
+
+The difference between this function and the previous one is that this function doesn't check the screen it logs out whenever it is triggered.
+
+| Inputs   |      Type/explanation      |
+|----------|:-------------:|
+| q |    Queue: Queue that is used for thread communication  |
+
+| Outputs   |      Type/explanation      | 
+|----------|:-------------:|
+|-| We add an element to the Queue q to tell the other thread to finish |
 
 
 [peg-multimarkdown] is an implementation of MultiMarkdown derived from John MacFarlane's [peg-markdown]. It makes use of a parsing expression grammar (PEG), and is written in C. It should compile for most any (major) operating system. 
