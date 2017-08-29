@@ -98,7 +98,7 @@ The core of the script. This function joins several of the previous function in 
 | None | Takes control of the mouse and keyboard and move them to execute the actions |
 
 
-## Move_to_safety ## (direction_in,direction_out,section,q)
+## Move_to_safety ## 
 
 This is one of the mods this script has. In this mod we don't log out the character if there is something dangerous present but, we make it enter to a safe zone by moving the character one step up/down, once the danger is gone and enough time has passed (to make the enemy get bored of waiting) we make the character move one step down/up.
 
@@ -126,6 +126,39 @@ In the code above we associate a function with its given values to a thread, and
 
 
 You need to customize all the coordinates. If you happen to have my same screen resolution, this same code should work for you. This code is just the core of what you can do with this macro, it is not very elegant, for example, a next step could be to get the coordinates automatically by detecting the elements in the screen with a search. But this worked fine for me so far so I didn't have the need to keep improving it with fancy details. Hope you find it useful.
+
+
+# Example #
+
+	spell="exura"
+	item_xy_n=(614,304)
+	item_xy_s=(621,394)
+	q = Queue.Queue()        
+	hand_xy=(1198,262)
+	rune1_xy=(1329,379)
+	rune2_xy=(1328,440)
+	rune3_xy=(1329,494)
+	food_xy=(1194,554)
+	food_xy2=(1275,306) #flechas
+	food_xy3=(1188,377) #bolsa bajo flechas
+	rune_name='adori gran flam'  
+	section=[(1203,648,1205,650,120),(1315,112,1316,114,120),(1309,269,1310,270,438,85,356,119),(614,304,615,305,210),(1220,95,1221,96,300),(636,373,637,374,203,0,0,0,0)] #intruso,mana,attacked,northitem,life,under. This are what each section means, the fifth value is always the theshold.
+	underpoints=[(628, 358,629,359,217,209,223),(619,381,620,382,211,203,221)]
+	select=1
+	direction_out='down'       #attacked,nothing,pz,hungry
+	direction_in='up' 
+	hotkey_runa='f10'
+	hotkey_manatrain='f11'
+
+	time.sleep(19) #This will give you time to change to the game screen before the macro starts running.
+	p =threading.Thread(target=Make_runes, args=(hand_xy,rune1_xy,rune2_xy,rune3_xy,food_xy,rune_name,section,q,))
+	#p=threading.Thread(target=trainmana, args=(food_xy2,q,))
+	p.start()
+	#p2=threading.Thread(target=Move_to_safety, args=(direction_in,direction_out,section,q))
+	p2=threading.Thread(target=Logout, args=(section,q,))
+	p2.start()
+
+
 
 
 [Medivia]:	https://medivia.online/
